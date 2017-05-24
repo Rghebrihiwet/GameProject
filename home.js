@@ -1,5 +1,8 @@
 jQuery(document).ready(function($){
 
+var colors = ['red', 'green', 'blue', 'orange', 'yellow'];
+
+
 function toggleDiv() {
     setTimeout(function () {
         $(".item").hide();
@@ -15,17 +18,16 @@ $('.item').on('click', function(){
     $(".item").hide();
   });
 
-// var myBall = $(".item" );
-// 	myBall.on("click", function(){
 
-// 		 $(this).css({removeClass});
-// 	})
+$('.item').each(function() {
+    $(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
+});
 
-// $(".item").click(function){
-// 	$(this).css('background-color', '#333');
-// 	// alert(background-color red, width, 100px, height: 100px)
-// 	// $(".item").hide();
-// }
+ setInterval(function() {
+ 	$(".item").animate({"colors":800})
+ });
+
+
 
 
 // var balloon_1 = new Image();
