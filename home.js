@@ -22,90 +22,97 @@ function changeColor (){
 }
 
 $('#item').on('click', function(){
-		totalScore ++
-    $('#item').hide();
-    $('#cunt').html(totalScore);
-  });
+	totalScore ++
+	$('#item').hide();
+	$('#scoree').html(totalScore);
+});
 
 $('#item2').on('click', function(){
-
+	totalScore ++
     $('#item2').hide();
-  });
+    $('#scoree').html(totalScore);
+ });
 
 $('#item3').on('click', function(){
-
-    $('#item3').hide();
-  });
+	totalScore ++
+	$('#scoree').html(totalScore);
+	$('#item3').hide();
+ });
 
 $('#item4').on('click', function(){
-
-    $('#item4').hide();
-  });
+	totalScore ++
+	$('#scoree').html(totalScore);
+	$('#item4').hide();
+ });
 
 $('#item5').on('click', function(){
-
+	totalScore ++
+	$('#scoree').html(totalScore);
     $('#item5').hide();
-  });
+ });
 
 $('#item6').on('click', function(){
-
+	totalScore ++
+	$('#scoree').html(totalScore);
     $('#item6').hide();
   });
 
 $('#item7').on('click', function(){
-
-    $('#item7').hide();
+	totalScore ++
+	$('#scoree').html(totalScore);
+	$('#item7').hide();
   });
 
 $('#item8').on('click', function(){
-
-    $('#item8').hide();
+	totalScore ++
+	$('#scoree').html(totalScore);
+	$('#item8').hide();
   });
 
 $('#item9').on('click', function(){
-
-    $('#item9').hide();
+	totalScore ++
+	$('#scoree').html(totalScore);
+	$('#item9').hide();
   });
 
 $('#item10').on('click', function(){
-
-    $('#item10').hide();
+	totalScore ++
+	$('#scoree').html(totalScore);
+	$('#item10').hide();
   });
 
 $('#item11').on('click', function(){
-
-    $('#item11').hide();
+	totalScore ++
+	$('#scoree').html(totalScore);
+	$('#item11').hide();
   });
 
- setInterval(function() {
+setInterval(function() {
  	// $(".item").animate({"colors":1000})
  	changeColor()
  	console.log ("working")
- }, 4000);
+ 	 }, 1000);
 
+function addCounter(){
+        $('#item').click(function () {
+        var good = $(this)
+        console.log(person.balloon("good"))
 
+        // check to see if we've shot a bad person
+        if(person.class ('good')){    
+            counters--;
+            $('.score').html(counters);
+        }
+        else{
+            counters++
+            $('.score').html(counters);
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        var id = '#' + $(this).attr('id');
+        changeImage(id);
+    })
+}
+        addCounter();
 
 
 	
@@ -114,11 +121,11 @@ $('#item11').on('click', function(){
 // 2. Balloon appears*
 // 3. Balloon dissapears after some time*
 // 4. click event on Balloon*
-// 5.balloons have color/score*
-// 6.on clickm get score balloon
-// 7. add score to total
+// 5.balloons have color/score
+// 6.on click get score balloon*
+// 7. add score to total*
 // 8.balloon position is random
-// 9. balloon color is random
+// 9. balloon color is random*
 // 10.timer
 // 11.alert score
 });
