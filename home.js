@@ -9,24 +9,28 @@ function toggleDiv() {
         setTimeout(function () {
             $(".item").show();
             toggleDiv();
-        }, 9000);
-    }, 9000);
+        }, 1000);
+    }, 1000);
 }
 toggleDiv(); 
+
+function changeColor (){
+	$('.item').each(function() {
+    $(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
+	});
+}
 
 $('.item').on('click', function(){
     $(".item").hide();
   });
 
 
-$('.item').each(function() {
-    $(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
-});
 
  setInterval(function() {
- 	$(".item").animate({"colors":800})
- });
-
+ 	$(".item").animate({"colors":3300})
+ 	changeColor()
+ 	console.log ("working")
+ }, 3000);
 
 
 
@@ -74,11 +78,11 @@ $('.item').each(function() {
 
 	
 
-// 1. Page loads
-// 2. Balloon appears
-// 3. Balloon dissapears after some time
-// 4. click event on Balloon
-// 5.balloons have color/score
+// 1. Page loads *
+// 2. Balloon appears*
+// 3. Balloon dissapears after some time*
+// 4. click event on Balloon*
+// 5.balloons have color/score*
 // 6.on clickm get score balloon
 // 7. add score to total
 // 8.balloon position is random
