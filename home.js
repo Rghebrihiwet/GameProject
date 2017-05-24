@@ -1,56 +1,88 @@
 jQuery(document).ready(function($){
 
 var colors = ['red', 'green', 'blue', 'orange', 'yellow'];
+var totalScore = 0
 
-
-function toggleDiv() {
-    setTimeout(function () {
-        $(".item").hide();
-        setTimeout(function () {
-            $(".item").show();
-            toggleDiv();
-        }, 1000);
-    }, 1000);
-}
-toggleDiv(); 
+// function toggleDiv() {
+//     setTimeout(function () {
+//         $(".item").hide();
+//         setTimeout(function () {
+//             $(".item").show();
+//             toggleDiv();
+//         }, 1000);
+//     }, 1000);
+// }
+// toggleDiv(); 
 
 function changeColor (){
-	$('.item').each(function() {
+	$('#item, #item2,#item3, #item4, #item5, #item6, #item7, #item7, #item8, #item9, #item10, #item11').each(function() {
+
     $(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
 	});
 }
 
-$('.item').on('click', function(){
-    $(".item").hide();
+$('#item').on('click', function(){
+		totalScore ++
+    $('#item').hide();
+    $('#cunt').html(totalScore);
   });
 
+$('#item2').on('click', function(){
 
+    $('#item2').hide();
+  });
+
+$('#item3').on('click', function(){
+
+    $('#item3').hide();
+  });
+
+$('#item4').on('click', function(){
+
+    $('#item4').hide();
+  });
+
+$('#item5').on('click', function(){
+
+    $('#item5').hide();
+  });
+
+$('#item6').on('click', function(){
+
+    $('#item6').hide();
+  });
+
+$('#item7').on('click', function(){
+
+    $('#item7').hide();
+  });
+
+$('#item8').on('click', function(){
+
+    $('#item8').hide();
+  });
+
+$('#item9').on('click', function(){
+
+    $('#item9').hide();
+  });
+
+$('#item10').on('click', function(){
+
+    $('#item10').hide();
+  });
+
+$('#item11').on('click', function(){
+
+    $('#item11').hide();
+  });
 
  setInterval(function() {
- 	$(".item").animate({"colors":3300})
+ 	// $(".item").animate({"colors":1000})
  	changeColor()
  	console.log ("working")
- }, 3000);
+ }, 4000);
 
-
-
-// var balloon_1 = new Image();
-// balloon_1.src = '';
-
-// var balloon_2 = new Image();
-// balloon_2.src = '';
-
-// var balloon_3 = new Image();
-// balloon_3.src = '';
-
-// var balloon_4 = new Image();
-// balloon_4.src = ''
-
-// var balloon_5 = new Image();
-// balloon_5.src = '';
-
-// var balloon_6 = new Image();
-// balloon_6.src = '';
 
 
 
