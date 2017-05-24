@@ -1,0 +1,27 @@
+
+.item{
+   background-color: red;
+   width: 100px;
+   height: 100px;
+
+}
+.itemTwo{
+   background-color: green;
+   width: 100px;
+   height: 100px;
+
+}
+
+#start{
+   float:right;
+}
+
+#reset{
+   float:left;
+}
+
+.score{
+   font-family: 'Montserrat', sans-serif;
+   color: rgba(31, 209, 0, 1);
+   font-size: 24px;
+   }
