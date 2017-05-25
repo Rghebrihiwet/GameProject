@@ -1,13 +1,21 @@
 jQuery(document).ready(function($){
 
-
 var colors = ['red', 'green', 'blue', 'orange', 'yellow'];
 var totalScore = 0
 animateDiv();
 
+var start = new Date;
+
+// setInterval(function() {
+// 	$(.timer){
+
+// 	}
+// }, 1000);
+
+
+
 function makeNewPosition(){
     
-    // Get viewport dimensions (remove the dimension of the div)
     var h = $(window).height() - 50;
     var w = $(window).width() - 50;
     
@@ -21,8 +29,8 @@ function makeNewPosition(){
 function animateDiv () {
     $('.balloon').each(function () {
 	    var newq = makeNewPosition();
-    	$(this).animate({ top: newq[0], left: newq[1] }, 3500, function () {
-      		animateDiv();  
+    		$(this).animate({ top: newq[0], left: newq[1] }, 3500, function () {
+      			animateDiv();  
   		});      
     });
     
@@ -31,9 +39,29 @@ function animateDiv () {
 function changeColor (){
 	$('#item, #item2,#item3, #item4, #item5, #item6, #item7, #item7, #item8, #item9, #item10, #item11, #item12, #item13, #item14, #item15, #item16, #item17, #item18, #item19, #item20, #item21, #item22, #item23, #item24, #item25').each(function() {
 
-    $(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
+    	$(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
 	});
 }
+
+function decTime(){
+        counter = counter -1;
+        $('#counter').html(counter);
+        
+        if(counter <= 0){
+            clearInterval(timer);
+            $("#loose").show();
+            // $(".again").show();
+
+            if(counter === 0) {
+            $('.random').hide();
+            $(".again").show();
+            
+        }
+            
+            return;
+
+        }
+    }
 
 
 $('.balloon').on('click', function() {
@@ -56,10 +84,13 @@ $('.balloon').on('click', function() {
 function showImg () {
 	setTimeout(function() {
 		$('.img').show();
-	}, 5000);
+	}, 10000);{
+		$('.img').hide();
+	} 5000;
 };	
 
 showImg();
+
 
 	// else {
 	// 	$('#item').css('background-color', 'green')

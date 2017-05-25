@@ -6,11 +6,16 @@
     height: 80px;
 }
 .main{
-   /*border: 3px solid blue;*/
+   border: 3px solid green;
    min-height: 620px; 
    width: 100%;
    overflow: hidden;
    position: relative;
+}
+#counter{
+  font-size: 100px;
+}
+
 }
 #start{
    float:right;
@@ -19,11 +24,17 @@
 #reset{
    float:left;
 }
-
+.name
+{
+   font-family: 'Montserrat', sans-serif;
+   color: rgba(31, 209, 0, 1);
+   font-size: 30px;
+}
 .score{
    font-family: 'Montserrat', sans-serif;
    color: rgba(31, 209, 0, 1);
    font-size: 50px;
+
    }
 .balloon {
    position: absolute;
@@ -56,10 +67,10 @@
 
 img {
    position: absolute;
-   top: 0;
-   left: 60%;
+   top: 10px;
+   left: 70%;
    display: none;
-   height: 40px
-   width: 40px;
+   height: 25%;
+   width: 25%;
 }
 
