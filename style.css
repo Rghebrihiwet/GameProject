@@ -5,7 +5,13 @@
     width: 80px;
     height: 80px;
 }
-
+.main{
+   /*border: 3px solid blue;*/
+   min-height: 620px; 
+   width: 100%;
+   overflow: hidden;
+   position: relative;
+}
 #start{
    float:right;
 }
@@ -47,3 +53,13 @@
     transform: translate3d(8px, 0, 0);
   }
 }
+
+img {
+   position: absolute;
+   top: 0;
+   left: 60%;
+   display: none;
+   height: 40px
+   width: 40px;
+}
+

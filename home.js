@@ -1,9 +1,10 @@
 jQuery(document).ready(function($){
 
+
 var colors = ['red', 'green', 'blue', 'orange', 'yellow'];
 var totalScore = 0
 animateDiv();
-	
+
 function makeNewPosition(){
     
     // Get viewport dimensions (remove the dimension of the div)
@@ -20,24 +21,12 @@ function makeNewPosition(){
 function animateDiv () {
     $('.balloon').each(function () {
 	    var newq = makeNewPosition();
-    	$(this).animate({ top: newq[0], left: newq[1] }, 3000, function () {
+    	$(this).animate({ top: newq[0], left: newq[1] }, 3500, function () {
       		animateDiv();  
   		});      
     });
     
 };
-
-
-// function toggleDiv() {
-//     setTimeout(function () {
-//         $(".item").hide();
-//         setTimeout(function () {
-//             $(".item").show();
-//             toggleDiv();
-//         }, 1000);
-//     }, 1000);
-// }
-// toggleDiv(); 
 
 function changeColor (){
 	$('#item, #item2,#item3, #item4, #item5, #item6, #item7, #item7, #item8, #item9, #item10, #item11, #item12, #item13, #item14, #item15, #item16, #item17, #item18, #item19, #item20, #item21, #item22, #item23, #item24, #item25').each(function() {
@@ -63,6 +52,14 @@ $('.balloon').on('click', function() {
 	}
 });
 
+
+function showImg () {
+	setTimeout(function() {
+		$('.img').show();
+	}, 5000);
+};	
+
+showImg();
 
 	// else {
 	// 	$('#item').css('background-color', 'green')
@@ -142,16 +139,7 @@ setInterval(function() {
  	// $(".item").animate({"colors":1000})
  	changeColor()
  	console.log ("working")
- 	 }, 3000);
-	
-
-
-
-
-
-
-
-
+ 	 }, 3000);	
 
 // 1. Page loads *
 // 2. Balloon appears*
