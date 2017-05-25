@@ -2,6 +2,31 @@ jQuery(document).ready(function($){
 
 var colors = ['red', 'green', 'blue', 'orange', 'yellow'];
 var totalScore = 0
+animateDiv();
+	
+function makeNewPosition(){
+    
+    // Get viewport dimensions (remove the dimension of the div)
+    var h = $(window).height() - 50;
+    var w = $(window).width() - 50;
+    
+    var nh = Math.floor(Math.random() * h);
+    var nw = Math.floor(Math.random() * w);
+    
+    return [nh,nw];    
+    
+}
+
+function animateDiv () {
+    $('.balloon').each(function () {
+	    var newq = makeNewPosition();
+    	$(this).animate({ top: newq[0], left: newq[1] }, 3000, function () {
+      		animateDiv();  
+  		});      
+    });
+    
+};
+
 
 // function toggleDiv() {
 //     setTimeout(function () {
@@ -15,11 +40,12 @@ var totalScore = 0
 // toggleDiv(); 
 
 function changeColor (){
-	$('#item, #item2,#item3, #item4, #item5, #item6, #item7, #item7, #item8, #item9, #item10, #item11').each(function() {
+	$('#item, #item2,#item3, #item4, #item5, #item6, #item7, #item7, #item8, #item9, #item10, #item11, #item12, #item13, #item14, #item15, #item16, #item17, #item18, #item19, #item20, #item21, #item22, #item23, #item24, #item25').each(function() {
 
     $(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
 	});
 }
+
 
 $('.balloon').on('click', function() {
 	var id = '#' + $(this).attr('id');
@@ -36,6 +62,8 @@ $('.balloon').on('click', function() {
 		$('#scoree').html(totalScore);
 	}
 });
+
+
 	// else {
 	// 	$('#item').css('background-color', 'green')
 	// 	totalScore ++;
@@ -115,30 +143,15 @@ setInterval(function() {
  	changeColor()
  	console.log ("working")
  	 }, 3000);
-
-// function addCounter(){
-//         $('#item').click(function () {
-//         var good = $(this)
-//         console.log(person.balloon("good"))
-
-//         // check to see if we've shot a bad person
-//         if(person.class ('good')){    
-//             counters--;
-//             $('.score').html(counters);
-//         }
-//         else{
-//             counters++
-//             $('.score').html(counters);
-//         }
-
-//         var id = '#' + $(this).attr('id');
-//         changeImage(id);
-//     })
-// }
-//         addCounter();
-
-
 	
+
+
+
+
+
+
+
+
 
 // 1. Page loads *
 // 2. Balloon appears*

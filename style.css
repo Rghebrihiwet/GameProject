@@ -1,9 +1,9 @@
 
-#item, #item2, #item3, #item4, #item5, #item6, #item7, #item7, #item8, #item9, #item10, #item11{
+#item, #item2, #item3, #item4, #item5, #item6, #item7, #item7, #item8, #item9, #item10, #item11, #item12, #item13, #item14, #item15, #item16, #item17, #item18, #item19, #item20, #item21, #item22, #item23, #item24, #item25{
     border-radius:100px;
     /*border:50px solid #5ae;*/
-    width: 50px;
-    height: 50px;
+    width: 80px;
+    height: 80px;
 }
 
 #start{
@@ -17,5 +17,33 @@
 .score{
    font-family: 'Montserrat', sans-serif;
    color: rgba(31, 209, 0, 1);
-   font-size: 24px;
+   font-size: 50px;
    }
+.balloon {
+   position: absolute;
+}
+
+.balloon:hover {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 300px;
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-3px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(6px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-6px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(8px, 0, 0);
+  }
+}
