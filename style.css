@@ -10,7 +10,7 @@
    min-height: 620px; 
    width: 100%;
    overflow: hidden;
-   position: relative;
+   position: relative; 
 }
 #counter{
   font-size: 100px;
