@@ -1,25 +1,20 @@
 jQuery(document).ready(function($){
 
+
+
+
 var colors = ['red', 'green', 'blue', 'orange', 'yellow'];
 var totalScore = 0
-animateDiv();
+var counter = 21;
 
-var start = new Date;
+animateDiv(); //calling the animation which runs the positioning of the balls
 
-// setInterval(function() {
-// 	$(.timer){
-
-// 	}
-// }, 1000);
-
-
-
-function makeNewPosition(){
+function makeNewPosition(){ 
     
-    var h = $(window).height() - 50;
+    var h = $(window).height() - 50;  //  }  height and width of how high/low the balls move
     var w = $(window).width() - 50;
     
-    var nh = Math.floor(Math.random() * h);
+    var nh = Math.floor(Math.random() * h); // } randomizes the position of the balls
     var nw = Math.floor(Math.random() * w);
     
     return [nh,nw];    
@@ -44,25 +39,24 @@ function changeColor (){
 }
 
 function decTime(){
-        counter = counter -1;
-        $('#counter').html(counter);
-        
-        if(counter <= 0){
-            clearInterval(timer);
-            $("#loose").show();
-            // $(".again").show();
 
-            if(counter === 0) {
-            $('.random').hide();
-            $(".again").show();
-            
-        }
-            
-            return;
+	timer = setInterval(tick,1000);
 
-        }
-    }
+}
+function tick () {
+   counter = counter -1;
+    $('#counter').html(counter);
+    
+    if(counter <= 0){
+        clearInterval(timer);
+        if(counter === 0) {
+    	}
 
+	}
+
+}
+
+decTime();
 
 $('.balloon').on('click', function() {
 	var id = '#' + $(this).attr('id');
