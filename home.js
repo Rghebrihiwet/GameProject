@@ -1,9 +1,19 @@
 jQuery(document).ready(function($){
 
+	$('#start-game').click(function(){
+iniTime(); 
 
-var colors = ['red', 'green', 'blue', 'orange', 'yellow']; // array of colours I want the balls be randomized through
-var totalScore = 0 // score to start at 0 
-var counter = 21; //counter to start at 21 secs
+showImg(); 
+
+setInterval(function() {
+ 	changeColor()
+ 		console.log ("working")
+ }, 2000);	
+	});
+
+	var colors = ['red', 'green', 'blue', 'orange', 'yellow', 'purple']; // array of colours I want the balls be randomized through
+	var totalScore = 0 // score to start at 0 
+	var counter = 22; //counter to start at 20 secs
 
 animateDiv(); //calling the animation which runs the positioning of the balls
 
@@ -13,8 +23,7 @@ function makeNewPosition(){
 	var nh = Math.floor(Math.random() * h); // } randomizes height and width of the balls
 	var nw = Math.floor(Math.random() * w);
 
-return [nh,nw];   
-    
+return [nh,nw];  
 }
 
 function animateDiv () {
@@ -27,14 +36,20 @@ function animateDiv () {
     
 };
 
+
+
 function changeColor (){ 
 	$('#item, #item2, #item3, #item4, #item5, #item6, #item7, #item7, #item8, #item9, #item10, #item11, #item12, #item13, #item14, #item15, #item16, #item17, #item18, #item19, #item20, #item21, #item22, #item23, #item24, #item25').each(function() {
-// #items being called at random then changing colours 'Math.floor(Math.random() * colors'.
-    	$(this).css('background-color', colors[Math.floor(Math.random() * colors.length)]);
+			
+	// #items being called at random then changing colours 'Math.floor(Math.random() * colors'.
+
+		var newColor = colors[Math.floor(Math.random() * colors.length)]
+    	$(this).css('background-color', newColor);
+    	$(this).attr("data-color", newColor)
 	});
 }
 
-function decTime(){
+function iniTime(){
 
 	timer = setInterval(tick,1000);  // countdown timer every second '1000'
 
@@ -46,39 +61,64 @@ function tick () {
     if(counter <= 0){
         clearInterval(timer); // clears the timer when it reaches '0'
         if(counter === 0) {
+        	$('body').append('<h1 class="game-over">GAME OVER<h1>');
     	}
 
 	}
 
 }
 
-decTime(); 
-
 $('.balloon').on('click', function() {
 		var id = '#' + $(this).attr('id');
-		console.log('id', id);
-		console.log('background-color', $(id).css('background-color'));
-			if($(id).css('background-color') === 'rgb(255, 0, 0)') { // if a red balloon is clicked then 1 point is deducted
-				totalScore --;
-				$(id).hide();
-			$('#scoree').html(totalScore);
-				console.log('this', $(this).css('background-color'));
-			} else {
-				totalScore++; // if it's not a red balloon which is clicked then it adds 1 point to the users score
-				$(id).hide();
-			$('#scoree').html(totalScore);
-		}
-});
+		var currentBalloon = $(this);
+
+			console.log('id', id);
+			console.log('background-color', $(id).css('background-color'));
+
+				if (currentBalloon.attr("data-color") === "red") {
+					totalScore -= 20
+					currentBalloon.hide();
+					}
+				else if 
+					(currentBalloon.attr("data-color") === "blue") {
+					totalScore += 5
+					currentBalloon.hide();
+					console.log('this', $(this).css('background-color'));
+				}
+				else if 
+					(currentBalloon.attr("data-color") === "green") {
+					totalScore += 5
+					currentBalloon.hide();
+					console.log('this', $(this).css('background-color'));
+				}
+				else if 
+					(currentBalloon.attr("data-color") === "purple") {
+					totalScore += 15
+					currentBalloon.hide();
+				}
+				else if 
+					(currentBalloon.attr("data-color") === "orange") {
+					totalScore += 10
+					currentBalloon.hide();
+					console.log('this', $(this).css('background-color'));
+					
+
+				} else {
+					totalScore++; // if it's not a red balloon which is clicked then it adds 1 point to the users score
+					$(id).hide();
+				}
+		$('#scoree').html(totalScore);
+
+	});
 
 function showImg () { // function for the gif image
 	setTimeout(function() {
 		$('.img').show(); // show the gif image after 10 seconds (10000= 10seconds)
-	}, 10000);{
+	}, 18000);{
 		$('.img').hide(); // hide after 5 seconds
 	} 5000;
 };	
 
-showImg(); 
 
 
 	// else {
@@ -155,11 +195,8 @@ showImg();
 // 	$('#item11').hide();
 //   });
 
-setInterval(function() {
- 	// $(".item").animate({"colors":1000})
- 	changeColor()
- 		console.log ("working")
- }, 3000);	// changes the color every 3 seconds 
+// changes the colour of the balls every second 
+
 
 // 1. Page loads *
 // 2. Balloon appears*
@@ -168,8 +205,8 @@ setInterval(function() {
 // 5.balloons have color/score
 // 6.on click get score balloon*
 // 7. add score to total*
-// 8.balloon position is random
+// 8.balloon position is random*
 // 9. balloon color is random*
-// 10.timer
-// 11.alert score
+// 10.timer*
+// 11.alert score*
 });

@@ -12,28 +12,71 @@
    overflow: hidden;
    position: relative; 
 }
+
+h2 {
+   font-family: 'Montserrat', sans-serif;
+   color: red;
+   font-size: 20px;
+}
+
+h3 {
+   color:black;
+   font-family: 'Montserrat', sans-serif;
+
+}
+p{
+   color:black;
+   font-family: 'Montserrat', sans-serif;
+   left: 30px;
+}
+.expl{
+   font-family: 'Montserrat', sans-serif;
+   color: rgba(31, 209, 0, 1);
+   font-size: 20px;
+}
 #counter{
   font-size: 100px;
 }
+.start-game{
+   display: block;
+   padding: 15px 30px;
+   background: #3498DB;
+   opacity: 0.8;
+   transition: opacity 0.3s;
+   position: absolute;
+   color: green;
+   text-transform: uppercase;
+   text-decoration: none;
+}
+.start-game:hover, .play-again:hover{
+   opacity: 9;
+}
+.start-game.initialized{
+   display: none;
+}
 
+#start-game {
+   display: block;
+   padding: 15px 30px;
+   background: #3498DB;
 }
-#start{
-   float:right;
+.game-over {
+   position: absolute;
+   color: red;
+   font-size: 50px;
+   top: 300px;
+   left: 700px;
 }
-
-#reset{
-   float:left;
-}
-.name
-{
+.name {
    font-family: 'Montserrat', sans-serif;
    color: rgba(31, 209, 0, 1);
    font-size: 30px;
 }
 .score{
    font-family: 'Montserrat', sans-serif;
-   color: rgba(31, 209, 0, 1);
+   color: red;
    font-size: 50px;
+   left: 50%;
 
    }
 .balloon {
