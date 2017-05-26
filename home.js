@@ -5,9 +5,9 @@ iniTime();
 
 showImg(); 
 
-setInterval(function() {
- 	changeColor()
- 		console.log ("working")
+setInterval(function() { // timer for the balls to change color.
+ 		changeColor()
+		console.log ("working")
  }, 2000);	
 	});
 
@@ -35,9 +35,7 @@ function animateDiv () {
     });
     
 };
-
-
-
+	
 function changeColor (){ 
 	$('#item, #item2, #item3, #item4, #item5, #item6, #item7, #item7, #item8, #item9, #item10, #item11, #item12, #item13, #item14, #item15, #item16, #item17, #item18, #item19, #item20, #item21, #item22, #item23, #item24, #item25').each(function() {
 			
@@ -101,7 +99,7 @@ $('.balloon').on('click', function() {
 					totalScore += 10
 					currentBalloon.hide();
 					console.log('this', $(this).css('background-color'));
-					
+					// points being specified when being clicked on by the user
 
 				} else {
 					totalScore++; // if it's not a red balloon which is clicked then it adds 1 point to the users score
